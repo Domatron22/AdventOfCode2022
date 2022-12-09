@@ -1,6 +1,10 @@
-import days.dayone.`day-one`
+import days.dayone.DayOne
+import days.daytwo.DayTwo
 
 fun main() {
-    val dayOne : `day-one` = `day-one`()
+    val dayOne : DayOne = DayOne()
     dayOne.main()
+
+    val dayTwo : DayTwo = DayTwo()
+    dayTwo.main()
 }

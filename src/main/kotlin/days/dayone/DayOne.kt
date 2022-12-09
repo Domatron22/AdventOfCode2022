@@ -6,7 +6,7 @@ import java.io.File
 /**
  * This class holds all the functions needed to complete the first day of problems for the Advent Of Code 2022
  */
-class `day-one`() {
+class DayOne() {
     private val ELF_NAMES: String =
         "src/main/resources/dayone/elf-names.txt"
     private val CAL_ONE: String =
@@ -17,14 +17,14 @@ class `day-one`() {
      */
     fun main(){
         val bigBoi : Elf = findTopElf()
-        println(bigBoi.name + " has the most SNACCS at :" + bigBoi.sumItems())
+        println("${bigBoi.name} has the most SNACCS at : ${bigBoi.sumItems()}")
 
         val top3Bois : MutableList<Elf> = findTopThree()
         println("Top Three BOIS are:")
         top3Bois.forEach {
-            println(it.name + ": " + it.sumItems())
+            println("${it.name} : ${it.sumItems()}")
         }
-        println("For a total of: " + sumAll(top3Bois))
+        println("For a total of: ${sumAll(top3Bois)}")
     }
 
     /**
