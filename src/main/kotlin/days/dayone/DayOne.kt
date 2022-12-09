@@ -2,15 +2,16 @@ package days.dayone
 
 import common.objects.Elf
 import java.io.File
+import common.utils.ElfUtils
 
 /**
  * This class holds all the functions needed to complete the first day of problems for the Advent Of Code 2022
  */
 class DayOne() {
-    private val ELF_NAMES: String =
-        "src/main/resources/dayone/elf-names.txt"
     private val CAL_ONE: String =
         "src/main/resources/dayone/calories1.txt"
+
+    val elfUtils : ElfUtils = ElfUtils()
 
     /**
      * This function is the main function and will find the elf who has the most food, and the top 3 elves with the most food
@@ -48,7 +49,7 @@ class DayOne() {
             } else {
                 if (currentElf == null) {
                     currentElf = Elf.Builder()
-                        .name(nameElf())
+                        .name(elfUtils.nameElf())
                         .initialItem(it.toInt())
                         .build()
                 } else {
@@ -108,12 +109,5 @@ class DayOne() {
         }
 
         return total
-    }
-
-    /**
-     * This function will grab a random elf name to assign to the current [Elf]
-     */
-    fun nameElf(): String {
-        return File(ELF_NAMES).readLines()[(0..913).random()]
     }
 }
