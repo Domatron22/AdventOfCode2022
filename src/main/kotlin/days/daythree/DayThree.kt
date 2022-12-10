@@ -39,10 +39,10 @@ class DayThree {
             elfList.add(currentElf)
         }
         checkElves(elfList)
-        println("\nThe total priority of matching items is ${sumList(inventory)}")
+        println("\nThe total priority of matching items is ${inventory.sum()}")
 
         groupElves()
-        println("The total priority for the groups are ${sumList(groupInventory)}")
+        println("The total priority for the groups are ${groupInventory.sum()}")
     }
 
     /**
@@ -71,19 +71,6 @@ class DayThree {
                 break
             }
         }
-    }
-
-    /**
-     * This function will sum the list of priorities
-     *
-     * @param list this is a pre-assembled list of priorities
-     */
-    fun sumList(list : MutableList<Int>) : Int{
-        var total : Int = 0
-        list.forEach {
-            total += it
-        }
-        return total
     }
 
     /**
