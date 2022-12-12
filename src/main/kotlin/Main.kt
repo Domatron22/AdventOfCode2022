@@ -1,3 +1,4 @@
+import days.dayfour.DayFour
 import days.dayone.DayOne
 import days.daythree.DayThree
 import days.daytwo.DayTwo
@@ -11,4 +12,7 @@ fun main() {
 
     val dayThree : DayThree = DayThree()
     dayThree.main()
+
+    val dayFour : DayFour = DayFour()
+    dayFour.main()
 }
